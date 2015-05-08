@@ -1,10 +1,10 @@
 {
-  "name": "application-name",
+  "name": "projeto-final",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "prestart": "npm install",
-    "start": "node bin/www"
+    "start": "nodemon bin/www"
   },
   "dependencies": {
     "body-parser": "^1.0.2",
