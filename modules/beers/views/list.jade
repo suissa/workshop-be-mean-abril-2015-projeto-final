@@ -1,1 +1,15 @@
-h2 Listagem de Cervejas
+h2 {{ title }}
+h3 {{ msg }}
+table
+  thead
+    tr
+      th(data-ng-click='ordenar("name")') Nome
+      th(data-ng-click='ordenar("price")') Pre&ccedil;o
+      th Remover
+  tbody
+    tr(data-ng-repeat='beer in beers | orderBy:predicate:reverse')
+      td
+        a(href='#/beers/{{beer._id}}') {{ beer.name }}
+      td {{ beer.price }}
+      td
+        button(data-ng-click='remove(beer)') Remover

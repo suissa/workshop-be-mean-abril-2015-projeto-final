@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives'
+  'myApp.directives',
+  'myApp.Beer'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
@@ -16,10 +17,6 @@ config(function ($routeProvider, $locationProvider) {
     }).
     when('/view2', {
       templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    when('/beers', {
-      templateUrl: 'expose/beers/list',
       controller: 'MyCtrl2'
     }).
     otherwise({
