@@ -4,10 +4,13 @@ var express = require('express'),
   errorHandler = require('errorhandler'),
   morgan = require('morgan'),
   routes = require('./routes'),
+  expose = require('./routes/expose')
   partials = require('./routes/partials'),
-  api = require('./routes/api'),
+  api = {},
   http = require('http'),
   path = require('path');
+
+api.beers = require('./modules/beers/routes/api');
 
 var app = module.exports = express();
 
@@ -17,7 +20,7 @@ var app = module.exports = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/modules');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -44,12 +47,13 @@ if (env === 'production') {
 
 // serve index  
 app.use('/', routes);
+app.use('/expose', expose);
 
 // server view partials
 app.use('/partials', partials);
 
 // JSON API
-app.use('/api', api);
+app.use('/api/beers', api.beers);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', function(req, res, next) {

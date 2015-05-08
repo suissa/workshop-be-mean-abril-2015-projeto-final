@@ -18,6 +18,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/partial2',
       controller: 'MyCtrl2'
     }).
+    when('/beers', {
+      templateUrl: 'expose/beers/list',
+      controller: 'MyCtrl2'
+    }).
     otherwise({
       redirectTo: '/view1'
     });
