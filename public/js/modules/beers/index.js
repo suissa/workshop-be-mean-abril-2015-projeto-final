@@ -9,19 +9,19 @@
       .when('/beers', {
         templateUrl: 'expose/beers/list',
         controller: 'BeerListController'
+      })
+      .when('/beers/create', {
+        templateUrl: 'expose/beers/create',
+        controller: 'BeerCreateController'
+      })
+      .when('/beers/:id', {
+        templateUrl: 'expose/beers/show',
+        controller: 'BeerGetController'
+      })
+      .when('/beers/:id/edit', {
+        templateUrl: 'expose/beers/edit',
+        controller: 'BeerUpdateController'
       });
-      // .when('/beers/create', {
-      //   templateUrl: 'modules/beer/views/create.html',
-      //   controller: 'BeerCreateController'
-      // })
-      // .when('/beers/:id', {
-      //   templateUrl: 'modules/beer/views/get.html',
-      //   controller: 'BeerGetController'
-      // })
-      // .when('/beers/:id/edit', {
-      //   templateUrl: 'modules/beer/views/update.html',
-      //   controller: 'BeerUpdateController'
-      // });
   }])
 
   .controller('BeerListController', BeerListController)

@@ -1,0 +1,13 @@
+h2 Consulta da cerveja {{ beer.name }}
+h3 {{ msg }}
+
+ul
+  li Name: {{ beer.name }}
+  li Price: {{ beer.price | currency:"R$ " }}
+  li Category: {{ beer.category }}
+  li Alcohool: {{ beer.alcohool }}
+  li Description: {{ beer.description }}
+  li
+      a(data-ng-href='beers/{{ beer._id }}/edit') Editar
+  li
+      button(data-ng-click='delete(beer)') EXCLUIR

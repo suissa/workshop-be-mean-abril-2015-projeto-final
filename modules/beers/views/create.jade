@@ -1,0 +1,38 @@
+h2 Cadastro de cerveja
+h3 {{ msg }}
+
+form
+  .form-group
+    label Name:
+    input.form-control(name='name', type='text'
+      data-ng-model='beer.name')
+
+  .form-group
+    label Category:
+    input.form-control(name='category', type='text'
+      data-ng-model='beer.category')
+
+  .form-group
+    label Price: R$
+    input.form-control(name='price', type='text'
+      data-ng-model='beer.price')
+
+  .form-group
+    label Alcohol:
+    input.form-control(name='alcohol', type='text'
+      data-ng-model='beer.alcohol')
+
+  .form-group
+    label Description:
+    textarea.form-control(name='description',
+      data-ng-model='beer.description')
+  .form-group
+    button(data-ng-click='save(beer)') Salvar
+
+
+
+
+
+
+
+
